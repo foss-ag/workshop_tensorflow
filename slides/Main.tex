@@ -195,6 +195,46 @@
 	\end{frame}
 	
 	\begin{frame}
+		\frametitle{XOR-Problem}
+		\includegraphics[scale=0.75]{resources/xor.png}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{XOR-Problem}
+		\begin{figure}[h]
+			\centering
+			\begin{tikzpicture}
+			\tikzstyle{value} = []
+			\tikzstyle{neuron}=[circle,draw, minimum size=25pt,inner sep=0pt]
+			\tikzset{edge/.style = {->,> = latex}}
+			
+			\node[value](x1) at (-2,0) {$x_1$};
+			\node[value](x2) at (-2, -2) {$x_2$};
+			\node[neuron](1) at (0,0) {};
+			\node[neuron](2) at (0, -2) {};
+			\node[neuron](3) at (2, -1) {};
+			\node[value](y) at (4,-1) {$y$};
+			\node[value](b1) at (0,1.5) {$b_1$};
+			\node[value](b2) at (0, -3.5) {$b_2$};
+			\node[value](b3) at (2, 0.5) {$b_3$};
+			
+			\draw[edge] (x1) --node [above] {$W_1$} (1);
+			\draw[edge] (x2) --node [above] {$W_2$} (2);
+			\draw[edge] (b1) to (1);
+			\draw[edge] (b2) to (2);
+			\draw[edge] (b3) to (3);
+			\draw[edge] (2) --node [below] {$W_{23}$} (3);	
+			\draw[edge] (1) --node [above] {$W_{13}$} (3);
+			\draw[edge] (3) to (y);	
+			\end{tikzpicture}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\centering Programmieren mit Tensorflow
+	\end{frame}
+	
+	\begin{frame}
 		\frametitle{Convolutional Neural Networks}
 		\begin{itemize}
 			\item vom visuellen Cortex inspiriert (ermöglicht visuelle Wahrnehmung)
