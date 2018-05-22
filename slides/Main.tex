@@ -9,7 +9,9 @@
 \usepackage{ngerman}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{tikz}
+
 
 %Für den Header notwendig!
 %\usepackage[percent]{overpic}
@@ -231,7 +233,7 @@
 	\end{frame}
 	
 	\begin{frame}
-		\centering Programmieren mit Tensorflow
+		\centering To the Tensorflow
 	\end{frame}
 	
 	\begin{frame}
@@ -245,24 +247,114 @@
 	\end{frame}
 	
 	\begin{frame}
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.2]{resources/doggo.jpg}
+			\qquad\qquad\qquad
+			\begin{subfigure}[b]{0.3\textwidth}
+				\includegraphics[scale=0.07]{resources/doggo_red.jpg}
+				
+				\includegraphics[scale=0.07]{resources/doggo_green.jpg}
+				
+				\includegraphics[scale=0.07]{resources/doggo_blue.jpg}
+			\end{subfigure}
+			
+			\cite{doggo}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
 		\frametitle{Convolutional Neural Networks}
 		\begin{itemize}
-			\item TODO: Beispiel Grafik für Intuition
+			\item Farbkanäle erhöhen die Dimensionalität der Eingabe
+			\item Kaum Informationsgewinn
+			\item[$\Rightarrow$] Graustufen
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\centering
+		\includegraphics[scale=0.2]{resources/doggo.jpg}\qquad\qquad
+		\includegraphics[scale=0.2]{resources/doggo_grey.jpg}
+		
+		\cite{doggo}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Convolutional Neural Networks}
+		\begin{itemize}
+			\item Ziel eines Convolutional Layers: Extrahiere Bild-Features
+			\item Convolutional Layer besteht nicht aus Neuronen, sondern aus Kernel-Matrizen
+			\item Lerne Kernel-Matrizen
 		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}
 		\frametitle{Convolutional Neural Networks}
 		\begin{itemize}
-			\item TODO: Beispiel Convolution
+			\item Veranschaulichung Kernel über Bild:  \url{https://raw.githubusercontent.com/vdumoulin/conv_arithmetic/master/gif/same_padding_no_strides.gif}
 		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}
 		\frametitle{Convolutional Neural Networks}
 		\begin{itemize}
-			\item TODO: Beispiel Pooling
+			\item Veranschaulichung Feature Extraction:
+			\url{https://ujwlkarn.files.wordpress.com/2016/08/giphy.gif?w=748}
 		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Convolutional Neural Networks}
+		\begin{itemize}
+			\item Extrahierte Features werden abstrakter, je tiefer wie ins Netz vordringen
+			\item Mehrere Kernel pro Layer $\Rightarrow$ mehrere Feature Maps pro Layer
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Convolutional Neural Networks}
+		\begin{itemize}
+			\item Problem: Kernel sollen spezifischer und abstrakter werden, je tiefer wir ins Netz vordringen
+			\item Problem: Dimension der Bilder häufig zu groß für anschließende Verarbeitung der Feature Maps
+			\item[$\Rightarrow$] Dimensionsreduktion nach Feature Extraction (Pooling)
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Convolutional Neural Networks}
+		\begin{itemize}
+			\item Pooling: Fasse Bildbereiche mit festgelegter Methode zusammen (z.B. Summe der Werte, Maximum)
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\centering
+		\includegraphics[scale=0.8]{resources/pooling.png}
+		
+		\cite{pooling}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Convolutional Neural Networks}
+		Zusammenfassung:
+		\begin{itemize}
+			\item Extrahiere Feature Maps mit Kernel-Matrizen
+			\item Reduziere Dimensionalität und Abstrahiere Feature Map mittels Pooling
+			\item Anschließende Klassifikation des Bildes mittels Feature Maps und Artificial Neural Networks
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\centering
+		\includegraphics[scale=0.25]{resources/convnet.jpg}
+		
+		\cite{convnet}
+	\end{frame}
+	
+	\begin{frame}
+		\centering
+		Back to Tensorflow
 	\end{frame}
 	
 	\begin{frame}
